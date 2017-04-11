@@ -1,0 +1,36 @@
+language: cpp
+
+git:
+    depth: 3
+
+branches:
+    only:
+    - master
+    - structure
+
+addons:
+    apt:
+        sources:
+        - george-edison55-precise-backports
+        - ubuntu-toolchain-r-test
+        packages:
+        - cmake
+        - cmake-data
+        - gcc-6
+        - rest2web
+        - libboost-dev
+
+compiler:
+    - gcc-6
+
+os:
+    - linux
+
+before_script:
+    - mkdir build
+    - cd build
+    - cmake ..
+
+script:
+    - make
+    - ctest -V
