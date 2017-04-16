@@ -10,7 +10,10 @@ endif()
 
 set(OUTPUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/index.html)
 set(SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/answers.rst)
-add_custom_command(OUTPUT ${OUTPUT_FILE} COMMAND ${RST2HTML} ${SOURCES} ${OUTPUT_FILE} DEPENDS ${SOURCES})
+add_custom_command(OUTPUT ${OUTPUT_FILE}
+    COMMAND ${RST2HTML} --math-output mathjax ${SOURCES} ${OUTPUT_FILE}
+    DEPENDS ${SOURCES}
+)
 add_custom_target(${PROJECT_NAME} ALL DEPENDS ${OUTPUT_FILE})
 
 find_package(Boost REQUIRED)

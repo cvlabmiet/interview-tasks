@@ -7,25 +7,27 @@
 #include <boost/range/irange.hpp>
 
 template<class Size>
-constexpr std::tuple<Size> make_cum_product(Size size)
+std::tuple<Size> make_cum_product(Size size)
 {
     return std::make_tuple(size);
 }
 
 template<class Size, class... Sizes>
-constexpr std::tuple<Sizes..., Size, Size> make_cum_product(Size product, Size second, Sizes... tail)
+std::tuple<Sizes..., Size, Size> make_cum_product(Size product, Size second, Sizes... tail)
 {
     return std::tuple_cat(std::make_tuple(product), make_cum_product(second * product, tail...));
 }
 
 template<class Functor, class RangesTuple, class TupleSizes, class TupleCumProd, std::size_t... Is>
-constexpr void dereference(Functor f, std::size_t index, const RangesTuple& ranges, const TupleSizes& sizes, const TupleCumProd& cum_prod, std::index_sequence<Is...>)
+void dereference(Functor f, std::size_t index,
+                 const RangesTuple& ranges, const TupleSizes& sizes, const TupleCumProd& cum_prod,
+                 std::index_sequence<Is...>)
 {
-    return f(std::get<Is>(ranges)[(index / std::get<Is>(cum_prod)) % std::get<Is>(sizes)]...);
+    f(std::get<Is>(ranges)[(index / std::get<Is>(cum_prod)) % std::get<Is>(sizes)]...);
 }
 
 template<class Functor, class... Ranges>
-constexpr void MultipleForLoop(Functor f, const Ranges&... rs)
+void MultipleForLoop(Functor f, const Ranges&... rs)
 {
     auto sizes = std::make_tuple(std::size(rs)...);
     auto cum_prod = make_cum_product(std::size_t(1), std::size(rs)...);
