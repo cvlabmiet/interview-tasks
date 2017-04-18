@@ -7,6 +7,7 @@ Custom main
 Требуется написать код программы, который будет использовать изменённую точку входа ``main``:
 
 .. code-block:: cpp
+
     int main(const std::vector<std::string>& args)
     {
         cout << "argc = " << args.size() << endl;
@@ -27,6 +28,7 @@ Custom main
 Пример вложенных циклов:
 
 .. code-block:: cpp
+
     for (int i = 7; i < 44; ++i)
         for (int j = 0; j < 10; ++j)
             for (int k = 4; k < 50; k += 4)
@@ -35,6 +37,7 @@ Custom main
 То же самое через ``MultipleForLoop``:
 
 .. code-block:: cpp
+
     template<class Functor, class... Ranges>
     void MultipleForLoop(Functor f, const Ranges&... ranges);
 
@@ -62,6 +65,7 @@ Custom main
 Пример описания:
 
 .. code-block:: json
+
     {
         "skip": 144,
         "print": 32,
@@ -71,6 +75,7 @@ Custom main
 Пример вызова программы:
 
 .. code-block:: bash
+
     $ ./bit_parser -c bmp-description.json picture.bmp
 
 Саму программу не надо писать, только её архитектуру.
