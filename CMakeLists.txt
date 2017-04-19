@@ -3,18 +3,16 @@ project(interview_tasks CXX)
 
 add_compile_options(-std=c++1z)
 
-find_program(RST2HTML NAMES rst2html.py rst2html)
-if(NOT RST2HTML)
-    message(FATAL_ERROR "Could not find rst2html.py program")
+find_program(SPHINX_BUILD NAMES sphinx-build sphinx-build.py)
+if(NOT SPHINX_BUILD)
+    message(FATAL_ERROR "Could not find sphinx-build program")
 endif()
 
-set(OUTPUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/index.html)
-file(GLOB SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.rst)
-add_custom_command(OUTPUT ${OUTPUT_FILE}
-    COMMAND ${RST2HTML} --math-output mathjax ${CMAKE_CURRENT_SOURCE_DIR}/README.rst ${OUTPUT_FILE}
-    DEPENDS ${SOURCES}
+configure_file(conf.py.in ${CMAKE_CURRENT_BINARY_DIR}/conf.py @ONLY)
+
+add_custom_target(${PROJECT_NAME} ALL
+    ${SPHINX_BUILD} -b html -c ${CMAKE_CURRENT_BINARY_DIR} "${CMAKE_CURRENT_SOURCE_DIR}" ${CMAKE_CURRENT_BINARY_DIR}
 )
-add_custom_target(${PROJECT_NAME} ALL DEPENDS ${OUTPUT_FILE})
 
 find_package(Boost REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
