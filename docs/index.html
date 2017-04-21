@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="generator" content="Docutils 0.13.1: http://docutils.sourceforge.net/" />
+<title></title>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+<style type="text/css">
+
+/* Minimal style sheet for the HTML output of Docutils.                    */
+/*                                                                         */
+/* :Author: Günter Milde, based on html4css1.css by David Goodger          */
+/* :Id: $Id: minimal.css 7952 2016-07-26 18:15:59Z milde $               */
+/* :Copyright: © 2015 Günter Milde.                                        */
+/* :License: Released under the terms of the `2-Clause BSD license`_,      */
+/*    in short:                                                            */
+/*                                                                         */
+/*    Copying and distribution of this file, with or without modification, */
+/*    are permitted in any medium without royalty provided the copyright   */
+/*    notice and this notice are preserved.                                */
+/*                                                                         */
+/*    This file is offered as-is, without any warranty.                    */
+/*                                                                         */
+/* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause     */
+
+/* This CSS2.1_ stylesheet defines rules for Docutils elements without    */
+/* HTML equivalent. It is required to make the document semantic visible. */
+/*                                                                        */
+/* .. _CSS2.1: http://www.w3.org/TR/CSS2                                  */
+/* .. _validates: http://jigsaw.w3.org/css-validator/validator$link       */
+
+/* alignment of text and inline objects inside block objects*/
+.align-left   { text-align: left; }
+.align-right  { text-align: right; }
+.align-center { clear: both; text-align: center; }
+.align-top    { vertical-align: top; }
+.align-middle { vertical-align: middle; }
+.align-bottom { vertical-align: bottom; }
+
+/* titles */
+h1.title, p.subtitle {
+  text-align: center;
+}
+p.admonition-title,
+p.topic-title,
+p.sidebar-title,
+p.rubric,
+p.system-message-title {
+  font-weight: bold;
+}
+h1 + p.subtitle,
+h1 + p.section-subtitle {
+  font-size: 1.6em;
+}
+h2 + p.section-subtitle { font-size: 1.28em; }
+p.subtitle,
+p.section-subtitle,
+p.sidebar-subtitle {
+  font-weight: bold;
+  margin-top: -0.5em;
+}
+p.sidebar-title,
+p.rubric {
+  font-size: larger;
+}
+p.rubric { color: maroon; }
+a.toc-backref {
+  color: black;
+  text-decoration: none; }
+
+/* Warnings, Errors */
+div.caution p.admonition-title,
+div.attention p.admonition-title,
+div.danger p.admonition-title,
+div.error p.admonition-title,
+div.warning p.admonition-title,
+div.system-messages h1,
+div.error,
+span.problematic,
+p.system-message-title {
+  color: red;
+}
+
+/* inline literals */
+span.docutils.literal {
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+/* do not wraph at hyphens and similar: */
+.literal > span.pre { white-space: nowrap; }
+
+/* Lists */
+
+/* compact and simple lists: no margin between items */
+.simple  li, .compact li,
+.simple  ul, .compact ul,
+.simple  ol, .compact ol,
+.simple > li p, .compact > li p,
+dl.simple > dd, dl.compact > dd {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Table of Contents */
+div.topic.contents { margin: 0; }
+ul.auto-toc {
+  list-style-type: none;
+  padding-left: 1.5em; }
+
+/* Enumerated Lists */
+ol.arabic     { list-style: decimal }
+ol.loweralpha { list-style: lower-alpha }
+ol.upperalpha { list-style: upper-alpha }
+ol.lowerroman { list-style: lower-roman }
+ol.upperroman { list-style: upper-roman }
+
+dt span.classifier { font-style: italic }
+dt span.classifier:before {
+  font-style: normal;
+  margin: 0.5em;
+  content: ":";
+}
+
+/* Field Lists and drivatives */
+/* bold field name, content starts on the same line */
+dl.field-list > dt,
+dl.option-list > dt,
+dl.docinfo > dt,
+dl.footnote > dt,
+dl.citation > dt {
+  font-weight: bold;
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-right: 0.5em;
+}
+/* Offset for field content (corresponds to the --field-name-limit option) */
+dl.field-list > dd,
+dl.option-list > dd,
+dl.docinfo > dd {
+  margin-left:  9em; /* ca. 14 chars in the test examples */
+}
+/* start field-body on a new line after long field names */
+dl.field-list > dd > *:first-child,
+dl.option-list > dd > *:first-child
+{
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+}
+/* field names followed by a colon */
+dl.field-list > dt:after,
+dl.docinfo > dt:after {
+  content: ":";
+}
+
+/* Bibliographic Fields (docinfo) */
+pre.address { font: inherit; }
+dd.authors > p { margin: 0; }
+
+/* Option Lists */
+dl.option-list { margin-left: 40px; }
+dl.option-list > dt { font-weight: normal; }
+span.option { white-space: nowrap; }
+
+/* Footnotes and Citations  */
+dl.footnote.superscript > dd {margin-left: 1em; }
+dl.footnote.brackets > dd {margin-left: 2em; }
+dl > dt.label { font-weight: normal; }
+a.footnote-reference.brackets:before,
+dt.label > span.brackets:before { content: "["; }
+a.footnote-reference.brackets:after,
+dt.label > span.brackets:after { content: "]"; }
+a.footnote-reference.superscript,
+dl.footnote.superscript > dt.label {
+  vertical-align: super;
+  font-size: smaller;
+}
+dt.label > span.fn-backref { margin-left: 0.2em; }
+dt.label > span.fn-backref > a { font-style: italic; }
+
+/* Line Blocks */
+div.line-block { display: block; }
+div.line-block div.line-block {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 40px;
+}
+
+/* Figures, Images, and Tables */
+.figure.align-left,
+img.align-left,
+object.align-left,
+table.align-left {
+  margin-right: auto;
+}
+.figure.align-center,
+img.align-center,
+object.align-center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.figure.align-right,
+img.align-right,
+object.align-right,
+table.align-right {
+  margin-left: auto;
+}
+/* reset inner alignment in figures and tables */
+div.align-left, div.align-center, div.align-right,
+table.align-left, table.align-center, table.align-right
+{ text-align: inherit }
+
+/* Admonitions and System Messages */
+div.admonition,
+div.system-message,
+div.sidebar{
+  margin: 40px;
+  border: medium outset;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+/* Sidebar */
+div.sidebar {
+  width: 30%;
+  max-width: 26em;
+  float: right;
+  clear: right;
+}
+
+/* Text Blocks */
+div.topic,
+pre.literal-block,
+pre.doctest-block,
+pre.math,
+pre.code {
+  margin-right: 40px;
+  margin-left: 40px;
+}
+pre.code .ln { color: gray; } /* line numbers */
+
+/* Tables */
+table { border-collapse: collapse; }
+td, th {
+  border-style: solid;
+  border-color: silver;
+  padding: 0 1ex;
+  border-width: thin;
+}
+td > p:first-child, th > p:first-child { margin-top: 0; }
+td > p, th > p { margin-bottom: 0; }
+
+table > caption {
+  text-align: left;
+  margin-bottom: 0.25em
+}
+
+table.borderless td, table.borderless th {
+  border: 0;
+  padding: 0;
+  padding-right: 0.5em /* separate table cells */
+}
+
+</style>
+<style type="text/css">
+
+/* CSS31_ style sheet for the output of Docutils HTML writers.             */
+/* Rules for easy reading and pre-defined style variants.		   */
+/*                                                                         */
+/* :Author: Günter Milde, based on html4css1.css by David Goodger          */
+/* :Id: $Id: plain.css 7952 2016-07-26 18:15:59Z milde $               */
+/* :Copyright: © 2015 Günter Milde.                                        */
+/* :License: Released under the terms of the `2-Clause BSD license`_,      */
+/*    in short:                                                            */
+/*                                                                         */
+/*    Copying and distribution of this file, with or without modification, */
+/*    are permitted in any medium without royalty provided the copyright   */
+/*    notice and this notice are preserved.                                */
+/*    	     	      	     	 					   */
+/*    This file is offered as-is, without any warranty.                    */
+/*                                                                         */
+/* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause     */
+/* .. _CSS3: http://www.w3.org/TR/CSS3		        		   */
+
+
+/* Document Structure */
+/* ****************** */
+
+/* "page layout" */
+body {
+  padding: 0 5%;
+  margin: 8px 0;
+}
+div.document {
+  line-height:1.3;
+  counter-reset: table;
+  /* counter-reset: figure; */
+  /* avoid long lines --> better reading */
+  /* OTOH: lines should not be too short because of missing hyphenation, */
+  max-width: 50em;
+  margin: auto;
+}
+
+/* Sections */
+
+/* Transitions */
+
+hr.docutils {
+  width: 80%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  clear: both;
+}
+
+/* Paragraphs               */
+/* ==========               */
+
+/* vertical space (parskip) */
+p, ol, ul, dl,
+div.line-block,
+table{
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+h1, h2, h3, h4, h5, h6,
+dl > dd {
+  margin-bottom: 0.5em;
+}
+
+/* Lists                    */
+/* ==========               */
+
+/* Definition Lists         */
+
+dl > dd p:first-child { margin-top: 0; }
+/* :last-child is not part of CSS 2.1 (introduced in CSS 3) */
+/* dl > dd p:last-child  { margin-bottom: 0; } */
+
+/* lists nested in definition lists */
+/* :only-child is not part of CSS 2.1 (introduced in CSS 3) */
+dd > ul:only-child, dd > ol:only-child { padding-left: 1em; }
+
+/* Description Lists */
+/* styled like in most dictionaries, encyclopedias etc. */
+dl.description > dt {
+  font-weight: bold;
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-right: 0.5em;
+}
+
+/* Field Lists */
+
+/* example for custom field-name width */
+dl.field-list.narrow > dd {
+  margin-left: 5em;
+}
+/* run-in: start field-body on same line after long field names */
+dl.field-list.run-in > dd p {
+  display: block;
+}
+
+/* Bibliographic Fields */
+
+/* generally, bibliographic fields use special definition list dl.docinfo */
+/* but dedication and abstract are placed into "topic" divs */
+div.abstract p.topic-title {
+  text-align: center;
+}
+div.dedication {
+  margin: 2em 5em;
+  text-align: center;
+  font-style: italic;
+}
+div.dedication p.topic-title {
+  font-style: normal;
+}
+
+/* Citations */
+dl.citation dt.label {
+  font-weight: bold;
+}
+span.fn-backref {
+  font-weight: normal;
+}
+
+/* Text Blocks           */
+/* ============          */
+
+/* Literal Blocks           */
+pre.literal-block, pre.doctest-block,
+pre.math, pre.code {
+  margin-left: 1.5em;
+  margin-right: 1.5em
+}
+
+/* Block Quotes             */
+
+blockquote,
+div.topic {
+  margin-left: 1.5em;
+  margin-right: 1.5em
+}
+blockquote > table,
+div.topic > table {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+blockquote p.attribution,
+div.topic p.attribution {
+  text-align: right;
+  margin-left: 20%;
+}
+
+/* Tables                   */
+/* ======                   */
+
+/* th { vertical-align: bottom; } */
+
+table tr { text-align: left; }
+
+/* "booktabs" style (no vertical lines) */
+table.booktabs {
+  border: 0;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.booktabs * {
+  border: 0;
+}
+table.booktabs th {
+  border-bottom: thin solid;
+}
+
+/* numbered tables (counter defined in div.document) */
+table.numbered > caption:before {
+  counter-increment: table;
+  content: "Table " counter(table) ": ";
+  font-weight: bold;
+}
+
+/* Explicit Markup Blocks   */
+/* ======================   */
+
+/* Footnotes and Citations  */
+/* -----------------------  */
+
+/* line on the left */
+dl.footnote {
+  padding-left: 1ex;
+  border-left: solid;
+  border-left-width: thin;
+}
+
+/* Directives               */
+/* ----------               */
+
+/* Body Elements            */
+/* ~~~~~~~~~~~~~            */
+
+/* Images and Figures */
+
+/* let content flow to the side of aligned images and figures */
+.figure.align-left,
+img.align-left,
+object.align-left {
+  display: block;
+  clear: left;
+  float: left;
+  margin-right: 1em
+}
+.figure.align-right,
+img.align-right,
+object.align-right {
+  display: block;
+  clear: right;
+  float: right;
+  margin-left: 1em
+}
+/* Stop floating sidebars, images and figures at section level 1,2,3 */
+h1, h2, h3 { clear: both; }
+
+/* Sidebar */
+
+/* Move into the margin. In a layout with fixed margins, */
+/* it can be moved into the margin completely.		 */
+div.sidebar {
+  width: 30%;
+  max-width: 26em;
+  margin-left: 1em;
+  margin-right: -5.5%;
+  background-color: #ffffee ;
+}
+
+/* Code                     */
+
+pre.code, code { background-color: #eeeeee }
+pre.code .ln { color: gray; } /* line numbers */
+/* basic highlighting: for a complete scheme, see */
+/* http://docutils.sourceforge.net/sandbox/stylesheets/ */
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+/* Math                     */
+/* styled separately (see math.css for math-output=HTML) */
+
+/* Epigraph                 */
+/* Highlights               */
+/* Pull-Quote               */
+/* Compound Paragraph       */
+/* Container                */
+
+/* can be styled in a custom stylesheet */
+
+/* Document Header and Footer */
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller;
+}
+
+/* Inline Markup            */
+/* =============            */
+
+/* Emphasis                 */
+/*   em                     */
+/* Strong Emphasis          */
+/*   strong		    */
+/* Interpreted Text         */
+/*   span.interpreted  	    */
+/* Title Reference 	    */
+/*   cite		    */
+/* Inline Literals          */
+/* possible values: normal, nowrap, pre, pre-wrap, pre-line */
+/*   span.docutils.literal { white-space: pre-wrap; } */
+
+/* Hyperlink References     */
+a { text-decoration: none; }
+
+/* External Targets         */
+/*   span.target.external   */
+/* Internal Targets  	    */
+/*   span.target.internal   */
+/* Footnote References      */
+/*   a.footnote-reference   */
+/* Citation References      */
+/*   a.citation-reference   */
+
+</style>
+</head>
+<body>
+<div class="document">
+
+
+<div class="contents topic" id="id1">
+<p class="topic-title first">Содержание</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id2" id="id15">Задачи для собеседований</a></p>
+<ul>
+<li><p><a class="reference internal" href="#custom-main" id="id16">Custom main</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id17">Линеаризация циклов</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id18">Сколько чисел можно составить из 7 единиц и 3 нулей?</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id19">Битовый парсер</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id6" id="id20">Решения к задачам</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id8" id="id21">Custom main</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id22">Линеаризация циклов</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id23">Сколько чисел можно составить из 7 единиц и 3 нулей?</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id24">Битовый парсер</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h1><a class="toc-backref" href="#id15">Задачи для собеседований</a></h1>
+<div class="section" id="custom-main">
+<h2><a class="toc-backref" href="#id16">Custom main</a></h2>
+<p>Требуется написать код программы, который будет использовать изменённую точку входа <span class="docutils literal">main</span>:</p>
+<pre class="code cpp literal-block"><code><span class="keyword type">int</span> <span class="name function">main</span><span class="punctuation">(</span><span class="keyword">const</span> <span class="name">std</span><span class="operator">::</span><span class="name">vector</span><span class="operator">&lt;</span><span class="name">std</span><span class="operator">::</span><span class="name">string</span><span class="operator">&gt;&amp;</span> <span class="name">args</span><span class="punctuation">)</span>
+<span class="punctuation">{</span>
+    <span class="name">cout</span> <span class="operator">&lt;&lt;</span> <span class="literal string">&quot;argc = &quot;</span> <span class="operator">&lt;&lt;</span> <span class="name">args</span><span class="punctuation">.</span><span class="name">size</span><span class="punctuation">()</span> <span class="operator">&lt;&lt;</span> <span class="name">endl</span><span class="punctuation">;</span>
+    <span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">auto</span><span class="operator">&amp;</span> <span class="name label">arg</span> <span class="punctuation">:</span> <span class="name">args</span><span class="punctuation">)</span>
+        <span class="name">cout</span> <span class="operator">&lt;&lt;</span> <span class="literal string">&quot;arg = &quot;</span> <span class="operator">&lt;&lt;</span> <span class="name">arg</span> <span class="operator">&lt;&lt;</span> <span class="name">endl</span><span class="punctuation">;</span>
+
+    <span class="keyword">return</span> <span class="literal number integer">0</span><span class="punctuation">;</span>
+<span class="punctuation">}</span></code></pre>
+<p>Для тестирования можно использовать online-компилятор <a class="reference external" href="http://coliru.stacked-crooked.com">http://coliru.stacked-crooked.com</a>.</p>
+<p>Ключевые слова: libc, crt0, линковка, RTLD_NEXT, стек, ELF-формат.</p>
+<p>Перейти на <a class="reference internal" href="#id7">решение</a>.</p>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id17">Линеаризация циклов</a></h2>
+<p>Задача состоит в написании функции <span class="docutils literal">MultipleForLoop</span>, которой передаются функтор действия и интервалы циклов.
+Пример вложенных циклов:</p>
+<pre class="code cpp literal-block"><code><span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword type">int</span> <span class="name">i</span> <span class="operator">=</span> <span class="literal number integer">7</span><span class="punctuation">;</span> <span class="name">i</span> <span class="operator">&lt;</span> <span class="literal number integer">44</span><span class="punctuation">;</span> <span class="operator">++</span><span class="name">i</span><span class="punctuation">)</span>
+    <span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword type">int</span> <span class="name">j</span> <span class="operator">=</span> <span class="literal number integer">0</span><span class="punctuation">;</span> <span class="name">j</span> <span class="operator">&lt;</span> <span class="literal number integer">10</span><span class="punctuation">;</span> <span class="operator">++</span><span class="name">j</span><span class="punctuation">)</span>
+        <span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword type">int</span> <span class="name">k</span> <span class="operator">=</span> <span class="literal number integer">4</span><span class="punctuation">;</span> <span class="name">k</span> <span class="operator">&lt;</span> <span class="literal number integer">50</span><span class="punctuation">;</span> <span class="name">k</span> <span class="operator">+=</span> <span class="literal number integer">4</span><span class="punctuation">)</span>
+            <span class="name">func</span><span class="punctuation">(</span><span class="name">i</span><span class="punctuation">,</span> <span class="name">j</span><span class="punctuation">,</span> <span class="name">k</span><span class="punctuation">);</span></code></pre>
+<p>То же самое через <span class="docutils literal">MultipleForLoop</span>:</p>
+<pre class="code cpp literal-block"><code><span class="keyword">template</span><span class="operator">&lt;</span><span class="keyword">class</span> <span class="name class">Functor</span><span class="punctuation">,</span> <span class="name">class</span><span class="punctuation">...</span> <span class="name">Ranges</span><span class="operator">&gt;</span>
+<span class="keyword type">void</span> <span class="name">MultipleForLoop</span><span class="punctuation">(</span><span class="name">Functor</span> <span class="name">f</span><span class="punctuation">,</span> <span class="keyword">const</span> <span class="name">Ranges</span><span class="operator">&amp;</span><span class="punctuation">...</span> <span class="name">ranges</span><span class="punctuation">);</span>
+
+<span class="name">MultipleForLoop</span><span class="punctuation">(</span><span class="name">func</span><span class="punctuation">,</span> <span class="name">boost</span><span class="operator">::</span><span class="name">irange</span><span class="punctuation">(</span><span class="literal number integer">7</span><span class="punctuation">,</span> <span class="literal number integer">44</span><span class="punctuation">),</span> <span class="name">boost</span><span class="operator">::</span><span class="name">irange</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="literal number integer">10</span><span class="punctuation">),</span> <span class="name">boost</span><span class="operator">::</span><span class="name">irange</span><span class="punctuation">(</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="literal number integer">50</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">));</span></code></pre>
+<p>Количество вложенных циклов не ограничено.</p>
+<p>В процессе задачи следует ответить на вопрос: как подобная операция называется в математике?</p>
+<p>Перейти на <a class="reference internal" href="#loop-linearization">решение</a>.</p>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id18">Сколько чисел можно составить из 7 единиц и 3 нулей?</a></h2>
+<p>Необходимо показать, как именно происходит подсчёт.
+Полезно будет рассмотреть простой пример: 2 единицы и 2 нуля.
+В качестве бонуса на собеседовании будет задан долнительный вопрос.</p>
+<p>Перейти на <a class="reference internal" href="#newtons-binom">решение</a>.</p>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id19">Битовый парсер</a></h2>
+<p>Необходимо составить архитектуру, которая будет описывать программу битового парсера любого контейнера.
+Программе на вход подаётся бинарный файл (медиа контейнер) и описание статического контейнера в каком-либо удобочитаемом формате (например, json).
+На выходе программа распечатывает те элементы контейнера, которые содержатся в описании.</p>
+<p>Пример: распечатать ширину и высоту изображения в формате <span class="docutils literal">BMP</span>.
+Пример описания:</p>
+<pre class="code json literal-block"><code><span class="punctuation">{</span>
+    <span class="name tag">&quot;skip&quot;</span><span class="punctuation">:</span> <span class="literal number integer">144</span><span class="punctuation">,</span>
+    <span class="name tag">&quot;print&quot;</span><span class="punctuation">:</span> <span class="literal number integer">32</span><span class="punctuation">,</span>
+    <span class="name tag">&quot;print&quot;</span><span class="punctuation">:</span> <span class="literal number integer">32</span>
+<span class="punctuation">}</span></code></pre>
+<p>Пример вызова программы:</p>
+<pre class="code bash literal-block"><code>$ ./bit_parser -c bmp-description.json picture.bmp</code></pre>
+<p>Саму программу не надо писать, только её архитектуру.
+В архитектуру входят:</p>
+<ul class="simple">
+<li><p>формат описаний;</p></li>
+<li><p>ограничения на медиа контейнер (какие контейнеры могут быть распарсены, какие нет);</p></li>
+<li><p>какие библиотеки будут использоваться;</p></li>
+<li><p>какие классы/структуры/данные и их функции предлагается написать;</p></li>
+<li><p>связи компонент;</p></li>
+<li><p>глубина описания должна затрагивать методы объектов;</p></li>
+<li><p>можно использовать UML, но он должен быть выполнен в иерархическом виде: каждую компоненту программы можно посмотреть подробно или в составе всей программы целиком.</p></li>
+</ul>
+<p>Ключевые слова: boost.params, boost.iterator, boost.spirit, boost.format, boost.iostreams.mapped_file</p>
+<p>Перейти на <a class="reference internal" href="#bit-parser">решение</a>.</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h1><a class="toc-backref" href="#id20">Решения к задачам</a></h1>
+<div class="section" id="id8">
+<span id="id7"></span><h2><a class="toc-backref" href="#id21">Custom main</a></h2>
+<p>Сразу перейдём к одному из <em>возможных</em> решений:</p>
+<pre class="code cpp literal-block"><code><span class="comment single">// Compile me:  g++ -std=c++11 main.cpp -o test -ldl -Wno-main
+</span><span class="comment preproc">#include</span> <span class="comment preprocfile">&lt;iostream&gt;</span><span class="comment preproc">
+#include</span> <span class="comment preprocfile">&lt;vector&gt;</span><span class="comment preproc">
+#include</span> <span class="comment preprocfile">&lt;string&gt;</span><span class="comment preproc">
+</span>
+<span class="comment preproc">#include</span> <span class="comment preprocfile">&lt;boost/format.hpp&gt;</span><span class="comment preproc">
+</span>
+<span class="comment preproc">#include</span> <span class="comment preprocfile">&lt;dlfcn.h&gt;</span><span class="comment preproc">
+</span>
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="name">std</span><span class="punctuation">;</span>
+
+<span class="keyword">typedef</span> <span class="keyword type">int</span> <span class="name function">libc_start_main_f</span><span class="punctuation">(...);</span>
+
+<span class="keyword">extern</span> <span class="literal string">&quot;C&quot;</span> <span class="keyword type">int</span> <span class="name">__libc_start_main</span><span class="punctuation">(</span><span class="keyword type">int</span> <span class="punctuation">(</span><span class="operator">*</span><span class="name">main</span><span class="punctuation">)(</span><span class="keyword type">int</span><span class="punctuation">,</span> <span class="keyword type">char</span> <span class="operator">**</span><span class="punctuation">,</span> <span class="keyword type">char</span> <span class="operator">**</span><span class="punctuation">),</span> <span class="keyword type">long</span> <span class="name">argc</span><span class="punctuation">,</span> <span class="keyword type">char</span><span class="operator">**</span> <span class="name">ubp_av</span><span class="punctuation">,</span>
+                                 <span class="keyword type">void</span> <span class="operator">*</span><span class="name">init</span><span class="punctuation">,</span> <span class="keyword type">void</span> <span class="operator">*</span><span class="name">fini</span><span class="punctuation">,</span> <span class="keyword type">void</span> <span class="operator">*</span><span class="name">rtld_fini</span><span class="punctuation">,</span> <span class="keyword type">void</span> <span class="operator">*</span><span class="name">stack_end</span><span class="punctuation">)</span>
+<span class="punctuation">{</span>
+    <span class="keyword">static</span> <span class="name">vector</span><span class="operator">&lt;</span><span class="name">string</span><span class="operator">&gt;</span> <span class="name">args</span><span class="punctuation">(</span><span class="name">ubp_av</span><span class="punctuation">,</span> <span class="name">ubp_av</span> <span class="operator">+</span> <span class="name">argc</span><span class="punctuation">);</span>
+    <span class="keyword">auto</span> <span class="name">libc_start_main_symbol</span> <span class="operator">=</span> <span class="name">dlsym</span><span class="punctuation">(</span><span class="name">RTLD_NEXT</span><span class="punctuation">,</span> <span class="literal string">&quot;__libc_start_main&quot;</span><span class="punctuation">);</span>
+    <span class="keyword">auto</span> <span class="name">real_libc_start_main</span> <span class="operator">=</span> <span class="keyword">reinterpret_cast</span><span class="operator">&lt;</span><span class="name">libc_start_main_f</span><span class="operator">*&gt;</span><span class="punctuation">(</span><span class="name">libc_start_main_symbol</span><span class="punctuation">);</span>
+    <span class="keyword">return</span> <span class="name function">real_libc_start_main</span><span class="punctuation">(</span><span class="name">main</span><span class="punctuation">,</span> <span class="punctuation">(</span><span class="keyword type">long</span><span class="punctuation">)</span><span class="operator">&amp;</span><span class="name">args</span><span class="punctuation">,</span> <span class="name">ubp_av</span><span class="punctuation">,</span> <span class="name">init</span><span class="punctuation">,</span> <span class="name">fini</span><span class="punctuation">,</span> <span class="name">rtld_fini</span><span class="punctuation">,</span> <span class="name">stack_end</span><span class="punctuation">);</span>
+<span class="punctuation">}</span>
+
+<span class="keyword type">int</span> <span class="name">main</span><span class="punctuation">(</span><span class="keyword">const</span> <span class="name">vector</span><span class="operator">&lt;</span><span class="name">string</span><span class="operator">&gt;&amp;</span> <span class="name">args</span><span class="punctuation">)</span>
+<span class="punctuation">{</span>
+    <span class="name">cout</span> <span class="operator">&lt;&lt;</span> <span class="literal string">&quot;argc = &quot;</span> <span class="operator">&lt;&lt;</span> <span class="name">args</span><span class="punctuation">.</span><span class="name">size</span><span class="punctuation">()</span> <span class="operator">&lt;&lt;</span> <span class="name">endl</span><span class="punctuation">;</span>
+    <span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword type">size_t</span> <span class="name">i</span> <span class="operator">=</span> <span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">e</span> <span class="operator">=</span> <span class="name">args</span><span class="punctuation">.</span><span class="name">size</span><span class="punctuation">();</span> <span class="name">i</span> <span class="operator">&lt;</span> <span class="name">e</span><span class="punctuation">;</span> <span class="operator">++</span><span class="name">i</span><span class="punctuation">)</span>
+        <span class="name">cout</span> <span class="operator">&lt;&lt;</span> <span class="name">boost</span><span class="operator">::</span><span class="name">format</span><span class="punctuation">(</span><span class="literal string">&quot;arg #%1% = %2%</span><span class="literal string escape">\n</span><span class="literal string">&quot;</span><span class="punctuation">)</span> <span class="operator">%</span> <span class="name">i</span> <span class="operator">%</span> <span class="name">args</span><span class="punctuation">[</span><span class="name">i</span><span class="punctuation">];</span>
+
+    <span class="keyword">return</span> <span class="literal number integer">0</span><span class="punctuation">;</span>
+<span class="punctuation">}</span></code></pre>
+<p>По умолчанию все программы линкуются статически с объектным файлом <span class="docutils literal">crt0.o</span>, который содержит настоящую точку входа в программу <span class="docutils literal">_start</span>.</p>
+<p>Функция <span class="docutils literal">__libc_start_main</span> вызывается кодом crt0 из динамически слинкованной библиотеки <span class="docutils literal">libc</span>.
+Её работа заключается в инициализации программы, в частности в вызове конструкторов статических объектов, в том числе так называемых <em>статических конструкторов</em>.
+Как правило, <span class="docutils literal">libc</span> всегда линкуется динамически: т.е., одна библиотека в системе обслуживает все исполняемые программы.
+Этим мы и воспользуемся.
+Опишем все тонкости реализации программы по порядку.</p>
+<dl class="simple">
+<dt>Hiding символов при динамической линковке</dt>
+<dd><p>На этапе линковки программы важен порядок передаваемых динамических библиотек.
+При наличии одинаковых символов (в нашем случае это <span class="docutils literal">__libc_start_main</span>) во время исполнения программы будет вызван тот, который встретится раньше.
+Таким образом будет вызвана наша функция <span class="docutils literal">__libc_start_main</span>, а не аналогичная из библиотеки <span class="docutils literal">libc</span>.
+Заметим, что если библиотека будет линковаться статически, то этот фокус не будет работать.
+Существует способ, при котором можно попросить загрузчика динамических библиотек <span class="docutils literal">ld</span> вернуть адрес следующего символа с таким же названием.
+Для этого служит флаг <span class="docutils literal">RTLD_NEXT</span>, с помощью которого можно получить все функции с одинаковыми именами в динамически слинкованных с нашей программой библиотеках.
+Поэтому мы просто сделаем необходимые нам действия, а потом вызовем настоящую <span class="docutils literal">__libc_start_main</span>.
+Чем-то напоминает вызов базовой реализации при наследовании.</p>
+</dd>
+<dt>Mangling имён</dt>
+<dd><p>Язык C++ добавляет специальные префиксы и суффиксы к именам функций, чтобы поддерживать такие технологии, как перегрузку функций и пространства имён.
+Язык C же в свою очередь добавляет только префикс: дополнительный <span class="docutils literal">_</span> к имени функции.
+Чтобы C++ правильно сформировал имя функции <span class="docutils literal">__libc_start_main</span>, необходимо сказать ему &quot;делай как в языке C&quot;.
+Для этого мы добавляем модификатор <span class="docutils literal">extern &quot;C&quot;</span>.</p>
+</dd>
+<dt>Статические переменные</dt>
+<dd><p>Вектор с аргументами объявлен с модификатором <span class="docutils literal">static</span>.
+Это необходимо, так как некоторые реализации <span class="docutils literal">__libc_start_main</span> не вызывают напрямую функцию <span class="docutils literal">main</span>, а оставляют это для следующего кода.
+Чтобы вектор не был очищен после выхода из функции, мы объявляем его статическим (все статические объекты - глобальные, с ограниченной областью видимости).
+Почему внутри функции, а не в глобальной области?
+Чтобы не засорять глобальную область.
+Инкапсуляция, однако.</p>
+</dd>
+<dt>Три аргумента у <span class="docutils literal">main</span></dt>
+<dd><p>Самые зоркие уже заметили, что у функции <span class="docutils literal">main</span> три аргумента, а не два.
+Третий аргумент - это таблица с переменными окружения.
+Таблица с аргументами командной строки и переменными окружения лежат на самой вершине стека.
+Помещаются они туда самой операционной системой при загрузке исполняемого файла в память.</p>
+</dd>
+<dt>Размер одной переменной на стеке</dt>
+<dd><p>Воспользуемся ещё одним приёмом: при помещении аргумента функции в стек, её размер увеличиваеся до размера регистра.
+Размер регистра таков, что способен поместить в себе указатель на память (как минимум это <span class="docutils literal"><span class="pre">std::size_t</span></span>).
+Таким образом, в первый аргумент можно положить адрес нашего вектора, а не <span class="docutils literal">int</span>.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id9">
+<span id="loop-linearization"></span><h2><a class="toc-backref" href="#id22">Линеаризация циклов</a></h2>
+<p>Наверное, первое, что приходит на ум, это</p>
+<pre class="code cpp literal-block"><code><span class="comment single">// Compile me: g++ -std=c++14 main.cpp -o test
+</span><span class="comment preproc">#include</span> <span class="comment preprocfile">&lt;iostream&gt;</span><span class="comment preproc">
+#include</span> <span class="comment preprocfile">&lt;list&gt;</span><span class="comment preproc">
+#include</span> <span class="comment preprocfile">&lt;vector&gt;</span><span class="comment preproc">
+</span>
+<span class="comment preproc">#include</span> <span class="comment preprocfile">&lt;boost/format.hpp&gt;</span><span class="comment preproc">
+#include</span> <span class="comment preprocfile">&lt;boost/range/irange.hpp&gt;</span><span class="comment preproc">
+</span>
+<span class="keyword">template</span><span class="operator">&lt;</span><span class="keyword">class</span> <span class="name class">Functor</span><span class="punctuation">,</span> <span class="keyword">class</span> <span class="name class">Range</span><span class="punctuation">,</span> <span class="name">class</span><span class="punctuation">...</span> <span class="name">Ranges</span><span class="operator">&gt;</span>
+<span class="keyword type">void</span> <span class="name">MultipleForLoop</span><span class="punctuation">(</span><span class="name">Functor</span> <span class="name">f</span><span class="punctuation">,</span> <span class="keyword">const</span> <span class="name">Range</span><span class="operator">&amp;</span> <span class="name">r</span><span class="punctuation">,</span> <span class="keyword">const</span> <span class="name">Ranges</span><span class="operator">&amp;</span><span class="punctuation">...</span> <span class="name">rs</span><span class="punctuation">)</span>
+<span class="punctuation">{</span>
+    <span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">auto</span> <span class="name label">x</span> <span class="punctuation">:</span> <span class="name">r</span><span class="punctuation">)</span>
+    <span class="punctuation">{</span>
+        <span class="comment single">// https://en.wikipedia.org/wiki/Currying
+</span>        <span class="keyword">auto</span> <span class="name">func</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="operator">&amp;</span><span class="name">f</span><span class="punctuation">,</span> <span class="name">x</span><span class="punctuation">](</span><span class="keyword">auto</span><span class="operator">&amp;</span><span class="punctuation">...</span> <span class="name">xs</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+            <span class="name">f</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span> <span class="name">xs</span><span class="punctuation">...);</span>
+        <span class="punctuation">};</span>
+        <span class="name">MultipleForLoop</span><span class="punctuation">(</span><span class="name">func</span><span class="punctuation">,</span> <span class="name">rs</span><span class="punctuation">...);</span>
+    <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+
+<span class="comment single">// https://en.wikipedia.org/wiki/Tail_call
+</span><span class="keyword">template</span><span class="operator">&lt;</span><span class="keyword">class</span> <span class="name class">Functor</span><span class="punctuation">,</span> <span class="keyword">class</span> <span class="name class">Range</span><span class="operator">&gt;</span>
+<span class="keyword type">void</span> <span class="name">MultipleForLoop</span><span class="punctuation">(</span><span class="name">Functor</span> <span class="name">f</span><span class="punctuation">,</span> <span class="keyword">const</span> <span class="name">Range</span><span class="operator">&amp;</span> <span class="name">r</span><span class="punctuation">)</span>
+<span class="punctuation">{</span>
+    <span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">auto</span> <span class="name label">x</span> <span class="punctuation">:</span> <span class="name">r</span><span class="punctuation">)</span>
+        <span class="name">f</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">);</span>
+<span class="punctuation">}</span>
+
+<span class="keyword type">void</span> <span class="name">func</span><span class="punctuation">(</span><span class="keyword type">int</span> <span class="name">i</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="name">j</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="name">k</span><span class="punctuation">)</span>
+<span class="punctuation">{</span>
+    <span class="name">std</span><span class="operator">::</span><span class="name">cout</span> <span class="operator">&lt;&lt;</span> <span class="name">boost</span><span class="operator">::</span><span class="name">format</span><span class="punctuation">(</span><span class="literal string">&quot;Received (%1%, %2%, %3%)</span><span class="literal string escape">\n</span><span class="literal string">&quot;</span><span class="punctuation">)</span> <span class="operator">%</span> <span class="name">i</span> <span class="operator">%</span> <span class="name">j</span> <span class="operator">%</span> <span class="name">k</span><span class="punctuation">;</span>
+<span class="punctuation">}</span>
+
+<span class="keyword type">int</span> <span class="name">main</span><span class="punctuation">(</span><span class="keyword type">int</span> <span class="name">argc</span><span class="punctuation">,</span> <span class="keyword type">char</span><span class="operator">**</span> <span class="name">argv</span><span class="punctuation">)</span>
+<span class="punctuation">{</span>
+    <span class="name">MultipleForLoop</span><span class="punctuation">(</span><span class="name">func</span><span class="punctuation">,</span> <span class="name">boost</span><span class="operator">::</span><span class="name">irange</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="literal number integer">3</span><span class="punctuation">),</span> <span class="name">std</span><span class="operator">::</span><span class="name">vector</span><span class="operator">&lt;</span><span class="keyword type">int</span><span class="operator">&gt;</span><span class="punctuation">({</span><span class="operator">-</span><span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">0</span><span class="punctuation">,</span> <span class="literal number integer">1</span><span class="punctuation">}),</span>
+                    <span class="name">std</span><span class="operator">::</span><span class="name">list</span><span class="operator">&lt;</span><span class="keyword type">int</span><span class="operator">&gt;</span><span class="punctuation">({</span><span class="literal number integer">10</span><span class="punctuation">,</span> <span class="literal number integer">11</span><span class="punctuation">,</span> <span class="literal number integer">12</span><span class="punctuation">,</span> <span class="literal number integer">13</span><span class="punctuation">}));</span>
+    <span class="keyword">return</span> <span class="literal number integer">0</span><span class="punctuation">;</span>
+<span class="punctuation">}</span></code></pre>
+<p>Однако задача наша - <em>полностью</em> избавиться от вложенных циклов.
+Приведённое же решение является попросту синтаксическим сахаром, которое во время компиляции разворачивается во вложенные циклы.</p>
+<p>Да, в математике есть процедура, похожая на вложенные циклы.
+И это - <em>декартово произведение</em>.
+Будет, наверное, неожиданно, если мы скажем, что числа от 0 до 799 - это декартово произведение трёх отрезков:
+<span class="math">\({[0, 7]} \times {[0, 9]} \times {[0, 9]}\)</span>.
+Каждая цифра соответствует своему циклу.
+Младшая цифра - это самый вложенный цикл, который &quot;бегает&quot; быстрее всех.
+Самая старшая цифра - это внешний цикл, самый &quot;медлительный&quot;.</p>
+<p>Если перевести числа из десятичной системы счисления в, скажем, двоичную, то количество цифр увеличится.
+Но ведь таким образом увеличится и количество вложенных циклов!
+А если перевести в 16-ричную систему, тогда цифр станет меньше, причём циклов тоже.
+Вот оно и решение: чтобы линеаризовать циклы, необходимо использовать системы счисления с большим базисом.</p>
+<p>Если с десятичной или любой <em>N</em>-ичной системой всё более менее понятно, то как быть, если базис каждой цифры произволен?
+Для этого надо вспомнить, как обрабатываются картинки.
+Как правило, под картинки выделяется единая линейная область памяти.
+Точка с координатами <span class="math">\((x, y)\)</span> должна перейти в линейный адрес <cite>i</cite> этой памяти с помощью формулы:</p>
+<div class="math">
+\begin{equation*}
+i = y \cdot width + x
+\end{equation*}
+</div>
+<p>где <cite>width</cite> - это ширина изображения.
+Полное количество точек изображения определяется как <span class="math">\(width \cdot height\)</span>.</p>
+<p>Куб определяется как набор картинок.
+Линейный адрес <cite>i</cite> каждой точки куба - это порядковый номер картинки <cite>z</cite>, умноженный на размерность оси <span class="math">\(width \cdot height\)</span>, плюс номер строки <cite>y</cite>,
+умноженный на размерность <cite>width</cite> и номер столбца <cite>x</cite>, размерность которого равна 1:</p>
+<div class="math">
+\begin{equation*}
+i = z \cdot width \cdot height + y \cdot width + x
+\end{equation*}
+</div>
+<p>Для <cite>N</cite>-мерного куба:</p>
+<div class="math">
+\begin{equation*}
+i = x_{n-1} \prod_{k=0}^{n-2} W_k + x_{n-2} \prod_{k=0}^{n-3} W_k + \ldots + x_2 \cdot W_1 \cdot W_0 + x_1 \cdot W_0 + x_0
+\end{equation*}
+</div>
+<p>Как по индексу <cite>i</cite> можно получить координаты в <cite>N</cite>-мерном кубе?</p>
+<dl class="footnote brackets">
+<dt class="label" id="id10"><span class="brackets">1</span></dt>
+<dd><p>Формула динамического базиса</p>
+</dd>
+</dl>
+<div class="math">
+\begin{equation*}
+\newcommand\bmod{\mathbin\%}
+\newcommand\trunc[1]{\left[ #1 \right]}
+\begin{aligned}
+    x_0 &amp;= i \bmod W_0, \\
+    x_1 &amp;= \trunc{\frac{i}{W_0}} \bmod W_1, \\
+    x_2 &amp;= \trunc{\frac{i}{W_0 \cdot W_1}} \bmod W_2, \\
+    &amp;\ldots, \\
+    x_{n-1} &amp;= \trunc{\frac{i}{W_0 \cdot W_1 \cdot \ldots \cdot W_{n-2}}} \bmod W_{n-1},
+\end{aligned}
+\end{equation*}
+</div>
+<p>где <span class="math">\(\trunc{\cdot}\)</span> - это целая часть числа, а <span class="math">\(x \bmod y\)</span> - остаток от деления <cite>x</cite> на <cite>y</cite>.
+Если произведения в знаменателях <span class="math">\(W_0 \cdot W_1 \cdot \ldots \cdot W_{k-1}\)</span> заменить на <span class="math">\(B^k\)</span>, тогда получится формула пересчёта числа <cite>i</cite> в базис <cite>B</cite>.
+Здесь и далее будем называть базис, в котором для каждой из цифр выбран свой базис - <cite>динамическим базисом</cite>.</p>
+<p>Таким образом, задача сведения вложенных циклов в один - это задача представления числа в динамическом базисе.
+Количество цифр - это количество базисов.
+Нижняя и верхняя границы каждой цифры определяют размер базиса.</p>
+<p>Рассмотрим одно из возможных решений задачи:</p>
+<pre class="code cpp literal-block"><code><span class="comment single">// Compile me: g++ -std=c++1z main.cpp -o test
+</span><span class="comment preproc">#include</span> <span class="comment preprocfile">&lt;iostream&gt;</span><span class="comment preproc">
+#include</span> <span class="comment preprocfile">&lt;iterator&gt;</span><span class="comment preproc">
+#include</span> <span class="comment preprocfile">&lt;vector&gt;</span><span class="comment preproc">
+</span>
+<span class="comment preproc">#include</span> <span class="comment preprocfile">&lt;boost/format.hpp&gt;</span><span class="comment preproc">
+#include</span> <span class="comment preprocfile">&lt;boost/range/irange.hpp&gt;</span><span class="comment preproc">
+</span>
+<span class="keyword">template</span><span class="operator">&lt;</span><span class="keyword">class</span> <span class="name class">Size</span><span class="operator">&gt;</span>
+<span class="name">std</span><span class="operator">::</span><span class="name">tuple</span><span class="operator">&lt;</span><span class="name">Size</span><span class="operator">&gt;</span> <span class="name">make_cum_product</span><span class="punctuation">(</span><span class="name">Size</span> <span class="name">size</span><span class="punctuation">)</span>
+<span class="punctuation">{</span>
+    <span class="keyword">return</span> <span class="name">std</span><span class="operator">::</span><span class="name">make_tuple</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">);</span>
+<span class="punctuation">}</span>
+
+<span class="keyword">template</span><span class="operator">&lt;</span><span class="keyword">class</span> <span class="name class">Size</span><span class="punctuation">,</span> <span class="name">class</span><span class="punctuation">...</span> <span class="name">Sizes</span><span class="operator">&gt;</span>
+<span class="name">std</span><span class="operator">::</span><span class="name">tuple</span><span class="operator">&lt;</span><span class="name">Sizes</span><span class="punctuation">...,</span> <span class="name">Size</span><span class="punctuation">,</span> <span class="name">Size</span><span class="operator">&gt;</span> <span class="name">make_cum_product</span><span class="punctuation">(</span><span class="name">Size</span> <span class="name">product</span><span class="punctuation">,</span> <span class="name">Size</span> <span class="name">second</span><span class="punctuation">,</span> <span class="name">Sizes</span><span class="punctuation">...</span> <span class="name">tail</span><span class="punctuation">)</span>
+<span class="punctuation">{</span>
+    <span class="keyword">return</span> <span class="name">std</span><span class="operator">::</span><span class="name">tuple_cat</span><span class="punctuation">(</span><span class="name">std</span><span class="operator">::</span><span class="name">make_tuple</span><span class="punctuation">(</span><span class="name">product</span><span class="punctuation">),</span> <span class="name">make_cum_product</span><span class="punctuation">(</span><span class="name">second</span> <span class="operator">*</span> <span class="name">product</span><span class="punctuation">,</span> <span class="name">tail</span><span class="punctuation">...));</span>
+<span class="punctuation">}</span>
+
+<span class="keyword">template</span><span class="operator">&lt;</span><span class="keyword">class</span> <span class="name class">Functor</span><span class="punctuation">,</span> <span class="keyword">class</span> <span class="name class">Ranges</span><span class="punctuation">,</span> <span class="keyword">class</span> <span class="name class">Sizes</span><span class="punctuation">,</span> <span class="keyword">class</span> <span class="name class">CumProd</span><span class="punctuation">,</span> <span class="name">std</span><span class="operator">::</span><span class="keyword type">size_t</span><span class="punctuation">...</span> <span class="name">Is</span><span class="operator">&gt;</span>
+<span class="keyword type">void</span> <span class="name">dereference</span><span class="punctuation">(</span><span class="name">Functor</span> <span class="name">f</span><span class="punctuation">,</span> <span class="name">std</span><span class="operator">::</span><span class="keyword type">size_t</span> <span class="name">index</span><span class="punctuation">,</span>
+                 <span class="keyword">const</span> <span class="name">Ranges</span><span class="operator">&amp;</span> <span class="name">ranges</span><span class="punctuation">,</span> <span class="keyword">const</span> <span class="name">Sizes</span><span class="operator">&amp;</span> <span class="name">sizes</span><span class="punctuation">,</span> <span class="keyword">const</span> <span class="name">CumProd</span><span class="operator">&amp;</span> <span class="name">cum_prod</span><span class="punctuation">,</span>
+                 <span class="name">std</span><span class="operator">::</span><span class="name">index_sequence</span><span class="operator">&lt;</span><span class="name">Is</span><span class="punctuation">...</span><span class="operator">&gt;</span><span class="punctuation">)</span>
+<span class="punctuation">{</span>
+    <span class="name">f</span><span class="punctuation">(</span><span class="name">std</span><span class="operator">::</span><span class="name">get</span><span class="operator">&lt;</span><span class="name">Is</span><span class="operator">&gt;</span><span class="punctuation">(</span><span class="name">ranges</span><span class="punctuation">)[(</span><span class="name">index</span> <span class="operator">/</span> <span class="name">std</span><span class="operator">::</span><span class="name">get</span><span class="operator">&lt;</span><span class="name">Is</span><span class="operator">&gt;</span><span class="punctuation">(</span><span class="name">cum_prod</span><span class="punctuation">))</span> <span class="operator">%</span> <span class="name">std</span><span class="operator">::</span><span class="name">get</span><span class="operator">&lt;</span><span class="name">Is</span><span class="operator">&gt;</span><span class="punctuation">(</span><span class="name">sizes</span><span class="punctuation">)]...);</span>
+<span class="punctuation">}</span>
+
+<span class="keyword">template</span><span class="operator">&lt;</span><span class="keyword">class</span> <span class="name class">Functor</span><span class="punctuation">,</span> <span class="name">class</span><span class="punctuation">...</span> <span class="name">Ranges</span><span class="operator">&gt;</span>
+<span class="keyword type">void</span> <span class="name">MultipleForLoop</span><span class="punctuation">(</span><span class="name">Functor</span> <span class="name">f</span><span class="punctuation">,</span> <span class="keyword">const</span> <span class="name">Ranges</span><span class="operator">&amp;</span><span class="punctuation">...</span> <span class="name">rs</span><span class="punctuation">)</span>
+<span class="punctuation">{</span>
+    <span class="keyword">auto</span> <span class="name">sizes</span> <span class="operator">=</span> <span class="name">std</span><span class="operator">::</span><span class="name">make_tuple</span><span class="punctuation">(</span><span class="name">std</span><span class="operator">::</span><span class="name">size</span><span class="punctuation">(</span><span class="name">rs</span><span class="punctuation">)...);</span>
+    <span class="keyword">auto</span> <span class="name">cum_prod</span> <span class="operator">=</span> <span class="name">make_cum_product</span><span class="punctuation">(</span><span class="name">std</span><span class="operator">::</span><span class="keyword type">size_t</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">),</span> <span class="name">std</span><span class="operator">::</span><span class="name">size</span><span class="punctuation">(</span><span class="name">rs</span><span class="punctuation">)...);</span>
+    <span class="keyword">auto</span> <span class="name">size</span> <span class="operator">=</span> <span class="name">std</span><span class="operator">::</span><span class="name">get</span><span class="operator">&lt;</span><span class="keyword">sizeof</span><span class="punctuation">...(</span><span class="name">Ranges</span><span class="punctuation">)</span><span class="operator">&gt;</span><span class="punctuation">(</span><span class="name">cum_prod</span><span class="punctuation">);</span>
+    <span class="keyword">auto</span> <span class="name">ranges</span> <span class="operator">=</span> <span class="name">std</span><span class="operator">::</span><span class="name">make_tuple</span><span class="punctuation">(</span><span class="name">rs</span><span class="punctuation">...);</span>
+
+    <span class="keyword">for</span> <span class="punctuation">(</span><span class="name">std</span><span class="operator">::</span><span class="keyword type">size_t</span> <span class="name">i</span> <span class="operator">=</span> <span class="literal number integer">0</span><span class="punctuation">;</span> <span class="name">i</span> <span class="operator">&lt;</span> <span class="name">size</span><span class="punctuation">;</span> <span class="operator">++</span><span class="name">i</span><span class="punctuation">)</span>
+        <span class="name">dereference</span><span class="punctuation">(</span><span class="name">f</span><span class="punctuation">,</span> <span class="name">i</span><span class="punctuation">,</span> <span class="name">ranges</span><span class="punctuation">,</span> <span class="name">sizes</span><span class="punctuation">,</span> <span class="name">cum_prod</span><span class="punctuation">,</span> <span class="name">std</span><span class="operator">::</span><span class="name">index_sequence_for</span><span class="operator">&lt;</span><span class="name">Ranges</span><span class="punctuation">...</span><span class="operator">&gt;</span><span class="punctuation">());</span>
+<span class="punctuation">}</span>
+
+<span class="keyword type">void</span> <span class="name">func</span><span class="punctuation">(</span><span class="keyword type">int</span> <span class="name">i</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="name">j</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="name">k</span><span class="punctuation">)</span>
+<span class="punctuation">{</span>
+    <span class="name">std</span><span class="operator">::</span><span class="name">cout</span> <span class="operator">&lt;&lt;</span> <span class="name">boost</span><span class="operator">::</span><span class="name">format</span><span class="punctuation">(</span><span class="literal string">&quot;Received (%1%, %2%, %3%)</span><span class="literal string escape">\n</span><span class="literal string">&quot;</span><span class="punctuation">)</span> <span class="operator">%</span> <span class="name">i</span> <span class="operator">%</span> <span class="name">j</span> <span class="operator">%</span> <span class="name">k</span><span class="punctuation">;</span>
+<span class="punctuation">}</span>
+
+<span class="keyword type">int</span> <span class="name">main</span><span class="punctuation">(</span><span class="keyword type">int</span> <span class="name">argc</span><span class="punctuation">,</span> <span class="keyword type">char</span><span class="operator">**</span> <span class="name">argv</span><span class="punctuation">)</span>
+<span class="punctuation">{</span>
+    <span class="name">MultipleForLoop</span><span class="punctuation">(</span><span class="name">func</span><span class="punctuation">,</span> <span class="name">boost</span><span class="operator">::</span><span class="name">irange</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="literal number integer">3</span><span class="punctuation">),</span> <span class="name">std</span><span class="operator">::</span><span class="name">vector</span><span class="operator">&lt;</span><span class="keyword type">int</span><span class="operator">&gt;</span><span class="punctuation">({</span><span class="operator">-</span><span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">0</span><span class="punctuation">,</span> <span class="literal number integer">1</span><span class="punctuation">}),</span>
+                    <span class="name">std</span><span class="operator">::</span><span class="name">vector</span><span class="operator">&lt;</span><span class="keyword type">int</span><span class="operator">&gt;</span><span class="punctuation">({</span><span class="literal number integer">10</span><span class="punctuation">,</span> <span class="literal number integer">11</span><span class="punctuation">,</span> <span class="literal number integer">12</span><span class="punctuation">,</span> <span class="literal number integer">13</span><span class="punctuation">}));</span>
+    <span class="keyword">return</span> <span class="literal number integer">0</span><span class="punctuation">;</span>
+<span class="punctuation">}</span></code></pre>
+<p>Основная идея заключена в функции <span class="docutils literal">dereference</span>.
+В ней для каждого <span class="docutils literal">ranges</span> выбирается текущая позиция по формуле динамического базиса (<a class="reference internal" href="#id10">1</a>).
+При этом на итераторы <span class="docutils literal">ranges</span> (в качестве них могут выступать и STL контейнеры) наложено ограничение: они должны удовлетворять концепции <a class="reference external" href="http://en.cppreference.com/w/cpp/concept/RandomAccessIterator">RandomAccessIterator</a>.</p>
+<p>Кумулятивное умножение <span class="docutils literal">make_cum_prod</span> реализует массив из знаменателей по формуле (<a class="reference internal" href="#id10">1</a>).
+Благодаря ему вычисления координат производятся только целочисленным делением и взятием остатка.</p>
+<p>Конечно, приведённый вариант линеаризации циклов уступает по производительности первому рекурсивному варианту.
+Но порой в некоторых задачах без линеаризации не обойтись.
+Ведь мы показали способ, который хорошо подходит не только для линеаризации вложенных циклов, но вообще всех линеаризаций, которые выражаются через динамический базис чисел.</p>
+</div>
+<div class="section" id="id11">
+<span id="newtons-binom"></span><h2><a class="toc-backref" href="#id23">Сколько чисел можно составить из 7 единиц и 3 нулей?</a></h2>
+<p>Для точности формулировки: каждое найденной число должно содержать ровно 7 единиц и 3 нуля.
+То есть разрядность числа составляет 10 позиций.</p>
+<p>Ответ заключается в использовании бинома Ньютона <span class="math">\(\newcommand\newtonbinom[2]{C^{#1}_{#2}}\newtonbinom{3}{10}\)</span>.</p>
+<p>Представим, что все 10 цифр заняты единицами.
+Мы будем заменять любые три единицы на символы <cite>a</cite>, <cite>b</cite> и <cite>c</cite>.
+<cite>a</cite> может заменить одну из 10 единиц, при этом <cite>b</cite> остаётся 9 позиций, а <cite>c</cite> - всего 8.
+В итоге получится, что разместить по 10 позициям <cite>a</cite>, <cite>b</cite> и <cite>c</cite> можно <span class="math">\(10 \cdot 9 \cdot 8\)</span> различными способами.
+А теперь заменим <cite>a</cite>, <cite>b</cite> и <cite>c</cite> на символ 0.
+Видим, что некоторые комбинации повторяются, так как все символы нуля одинаковые.
+Сколько таких одинаковых комбинаций?</p>
+<p>Для ответа на этот вопрос представим отдельно <cite>a</cite>, <cite>b</cite> и <cite>c</cite> по трём позициям.
+Снова: <cite>a</cite> может занять 3 позиции, при этом <cite>b</cite> - 2, и <cite>c</cite> - 1.
+Получаем, что комбинаций всего будет <span class="math">\(3 \cdot 2 \cdot 1 = 3!\)</span>.</p>
+<p>Вернёмся к изначальной задаче.
+Необходимо найти количество комбинаций <cite>x</cite>.
+Как мы уже выяснили, всего комбинаций будет <span class="math">\(10 \cdot 9 \cdot 8\)</span>, но из них <span class="math">\(3!\)</span> одни и те же.
+То есть</p>
+<div class="math">
+\begin{equation*}
+10 \cdot 9 \cdot 8 = 3! \cdot x
+\end{equation*}
+</div>
+<p>Откуда следует, что из 7 единиц и 3 нулей можно составить <span class="math">\(\frac{10 \cdot 9 \cdot 8}{3!} = 120\)</span> чисел.</p>
+<p>Разберём два дополнительных вопроса.</p>
+<dl>
+<dt>Почему <span class="math">\(\frac{10 \cdot 9 \cdot 8}{3!}\)</span> и <span class="math">\(\frac{10!}{7! \cdot 3!}\)</span> одно и то же?</dt>
+<dd><p>С первой формулой всё понятно: надо вставить 3 нуля в 10 позиций.
+Вторая формула говорит, что необходимо 7 единиц и 3 нуля вставить в 10 позиций.
+По сути, обе формулы означают одно и то же, просто по-разному трактуются.</p>
+</dd>
+<dt>Сколько чисел можно составить из 7 единиц, 3 нулей, 4 двоек и 2 троек?</dt>
+<dd><p>Имея накопленные знания, нетрудно подсчитать, что:</p>
+<ul class="simple">
+<li><p>всего позиций 16</p></li>
+<li><p>всевозможных перестановок будет <span class="math">\(16!\)</span></p></li>
+<li><p>повторяющихся единиц будет <span class="math">\(7!\)</span>, нулей - <span class="math">\(3!\)</span>, двоек - <span class="math">\(4!\)</span>, троек - <span class="math">\(2!\)</span></p></li>
+</ul>
+<p>В итоге получим, что нужное количество чисел составит <span class="math">\(\frac{16!}{7! \cdot 3! \cdot 4! \cdot 2!}\)</span>.
+Аналогично, можно &quot;заморозить&quot; единицы и представить все оставшиеся числа разными.
+Тогда получим другую формулу:
+<span class="math">\(\frac{16 \cdot 15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9 \cdot 8}{3! \cdot 4! \cdot 2!}\)</span>.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id12">
+<span id="bit-parser"></span><h2><a class="toc-backref" href="#id24">Битовый парсер</a></h2>
+<p>На первый взгляд кажется, что тут всё понятно: надо просто сесть и написать.
+Но лучше приглядеться к задаче повнимательнее.</p>
+<p>Требуется написать программу, которая побитово разбирает файл и производит некоторые манипуляции согласно файл-описанию.
+Первое, что стоит попробовать - это написать тестовые примеры.</p>
+<dl>
+<dt>Ширина и высота изображения в формате <span class="docutils literal">BMP</span></dt>
+<dd><p>Данный пример присутствует в постановке задачи.
+Предлагается ввести команды <span class="docutils literal">print</span> и <span class="docutils literal">skip</span>.
+Но что, если нам надо выводить не только числа заданного количества бит, но и буквы, строки, сложные объекты?</p>
+</dd>
+<dt>Ширина и высота видео в формате <span class="docutils literal">MP4</span></dt>
+<dd><p>Согласно стандарту <a class="reference external" href="https://en.wikipedia.org/wiki/MPEG-4_Part_14">MPEG-4 Part 14</a> ширина и высота видео хранятся в боксе
+<span class="docutils literal">stsd</span> для трэка видео.
+Маршрут его поиска по боксам такой: <span class="docutils literal">moov <span class="pre">-&gt;</span> trak <span class="pre">-&gt;</span> mdia <span class="pre">-&gt;</span> minf <span class="pre">-&gt;</span> stbl <span class="pre">-&gt;</span> stsd</span>.
+Каждый бокс представляет из себя структуру: размер, кодовое слово (trak, stbl и т.д.), данные.
+Например, на рисунке видны боксы: moov, mvhd, trak, tkhd, edts, elst.
+Перед каждым боксом первые 4 байта - его размер вместе с хранимыми данными.
+Но как можно до них добраться?
+Нужно же уметь сравнивнивать прочитанные биты с каким-то значением и делать выбор.
+То есть необходим аналог <span class="docutils literal">if</span> выражения из языка программирования в файл-описании.</p>
+<img alt="mp4.png" src="mp4.png" />
+</dd>
+</dl>
+<p>Обратим внимание на пункт в задаче <span class="docutils literal">ограничения на медиа контейнер</span>.
+Именно им и настало время воспользоваться:</p>
+<ol class="arabic simple">
+<li><p>распечатывать значения можно только в формате <span class="docutils literal">int</span> с разрядностью от 1 до 64 бит;</p></li>
+<li><p>медиа контейнер должен быть статическим, т.е., распечатываемое значение должно всегда находится в одной и той же битовой позиции от начала файла.</p></li>
+</ol>
+<p>Теперь распишем полную последовательность используемых классов/объектов.</p>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 25%" />
+<col style="width: 27%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr><th class="head"><p>Аргументы</p></th>
+<th class="head"><p>-c</p></th>
+<th class="head"><p>description.json</p></th>
+<th class="head"><p>my.bmp</p></th>
+</tr>
+</thead>
+<tbody>
+<tr><td><p>Первый уровень</p></td>
+<td><p>boost::program_options</p></td>
+<td><p>boost::property_tree</p></td>
+<td><p>boost::iostreams::memory_mapped_file</p></td>
+</tr>
+<tr><td><p>Второй уровень</p></td>
+<td><p>превращается в вызовы
+<span class="docutils literal"><span class="pre">if(vm.count(&quot;config&quot;))</span></span></p></td>
+<td><p>превращается в упорядоченный
+контейнер <span class="docutils literal">description</span></p></td>
+<td><p>обычный указатель на память
+<span class="docutils literal">void* memory_ptr</span></p></td>
+</tr>
+<tr><td><p>Третий уровень</p></td>
+<td></td>
+<td><p>анализ структуры файла</p></td>
+<td><p>битовый итератор <span class="docutils literal">BitIterator</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Третий уровень является самым подробным.
+Анализ структуры файла происходит по обычному циклу:</p>
+<pre class="code cpp literal-block"><code><span class="keyword">auto</span> <span class="name">it_file</span> <span class="operator">=</span> <span class="name">BitIterator</span><span class="punctuation">(</span><span class="name">memory_ptr</span><span class="punctuation">);</span>
+<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">auto</span> <span class="name label">it</span> <span class="punctuation">:</span> <span class="name">description</span><span class="punctuation">)</span>
+<span class="punctuation">{</span>
+    <span class="keyword">switch</span> <span class="punctuation">(</span><span class="name">it</span><span class="punctuation">.</span><span class="name">first</span><span class="punctuation">)</span>
+    <span class="punctuation">{</span>
+        <span class="keyword">case</span> <span class="name label">PRINT_COMMAD</span><span class="punctuation">:</span>
+            <span class="name">cout</span> <span class="operator">&lt;&lt;</span> <span class="name">BitIterator</span><span class="operator">::</span><span class="name">get</span><span class="punctuation">(</span><span class="name">it_file</span><span class="punctuation">,</span> <span class="name">it</span><span class="punctuation">.</span><span class="name">second</span><span class="punctuation">)</span> <span class="operator">&lt;&lt;</span> <span class="name">endl</span><span class="punctuation">;</span>
+            <span class="keyword">break</span><span class="punctuation">;</span>
+        <span class="keyword">case</span> <span class="name label">SKIP_COMMAND</span><span class="punctuation">:</span>
+            <span class="name">it_file</span> <span class="operator">+=</span> <span class="name">it</span><span class="punctuation">.</span><span class="name">second</span><span class="punctuation">;</span>
+            <span class="keyword">break</span><span class="punctuation">;</span>
+        <span class="keyword">default</span><span class="operator">:</span>
+            <span class="name">cerr</span> <span class="operator">&lt;&lt;</span> <span class="literal string">&quot;No such command&quot;</span> <span class="operator">&lt;&lt;</span> <span class="name">endl</span><span class="punctuation">;</span>
+    <span class="punctuation">}</span>
+<span class="punctuation">}</span></code></pre>
+<p>Мы идём по контейнеру <span class="docutils literal">description</span>, который является отображением <span class="docutils literal"><span class="pre">bmp-description.json</span></span>.
+Итератор контейнера содержит элемент json-а: <span class="docutils literal">first</span> - это имя команды (его мы распарсили где-то заранее), <span class="docutils literal">second</span> - это количество битов.
+Пока поддерживаются только команды &quot;напечатать&quot; (print) и &quot;пропустить&quot; (skip) заданное количество битов.
+Отсюда следует ещё одно ограничение:</p>
+<ol class="arabic simple" start="3">
+<li><p>поддерживаются только команды <span class="docutils literal">print</span> и <span class="docutils literal">skip</span>.</p></li>
+</ol>
+<p>Затем заданное число битов попадает либо в функцию <span class="docutils literal"><span class="pre">BitIterator::get</span></span> и печататается на экран (поэтому мы делали ограничение сверху на 64 бита, чтобы
+поместилось в <span class="docutils literal">uint64_t</span>), либо просто смещается битовый итератор.
+Мы не будем вдаваться в подробности битового интератора, так как это его методы и поведение полностью соответствуют концепции
+<a class="reference external" href="http://en.cppreference.com/w/cpp/concept/Iterator">итераторов</a>, для которой задача уже решена много раз в STL.</p>
+<p>Использование <span class="docutils literal"><span class="pre">boost::property_tree</span></span> можно заменить на другой парсер.
+Самое главное, чтобы на выходе у нас получался контейнер с командами и количествами битов.
+<span class="docutils literal"><span class="pre">boost::iostreams::memory_mapped_file</span></span> необходим нам, чтобы данные были сразу представлены в виде сырого указателя на память, как будто мы
+работаем с обычным <span class="docutils literal"><span class="pre">std::vector</span></span>, а также для быстрого считывания больших (по несколько гигабайт) файлов.
+Этот подход называется <a class="reference external" href="https://en.wikipedia.org/wiki/Memory-mapped_file">отображением в память</a>.</p>
+<p>На этом этапе задачу можно считать решённой.
+Остаётся развить битовый парсер дальше, чтобы избавиться от трёх выдвинутых нами ограничений.</p>
+</div>
+</div>
+</div>
+</body>
+</html>

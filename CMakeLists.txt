@@ -8,13 +8,13 @@ if(NOT RST_COMPILER)
     message(FATAL_ERROR "Could not find rst2html5 program")
 endif()
 
-set(OUTPUT_HTML ${CMAKE_CURRENT_BINARY_DIR}/index.html)
+set(OUTPUT_HTML ${CMAKE_SOURCE_DIR}/docs/index.html)
 set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES ${OUTPUT_HTML})
 file(GLOB SOURCES *.rst)
 file(GLOB RESOURCES *.png)
 
 add_custom_target(${PROJECT_NAME} ALL
-    COMMAND ${CMAKE_COMMAND} -E copy ${RESOURCES} ${CMAKE_CURRENT_BINARY_DIR}
+    COMMAND ${CMAKE_COMMAND} -E copy ${RESOURCES} ${CMAKE_SOURCE_DIR}/docs/
     COMMAND ${RST_COMPILER} --math-output mathjax ${CMAKE_SOURCE_DIR}/index.rst ${OUTPUT_HTML}
     DEPENDS ${SOURCES}
 )
