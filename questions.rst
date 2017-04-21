@@ -43,7 +43,7 @@ Custom main
     template<class Functor, class... Ranges>
     void MultipleForLoop(Functor f, const Ranges&... ranges);
 
-    MultipleForLoop(func, boost::irange(7, 44), boost::irange(0, 10), boost::irange(4, 50, 4))
+    MultipleForLoop(func, boost::irange(7, 44), boost::irange(0, 10), boost::irange(4, 50, 4));
 
 Количество вложенных циклов не ограничено.
 

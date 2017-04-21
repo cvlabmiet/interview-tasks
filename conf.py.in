@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 extensions = ['sphinx.ext.mathjax']
-templates_path = ['@CMAKE_CURRENT_BINARY_DIR@/templates']
+templates_path = ['@SPHINX_BUILD_DIR@/_templates']
 source_suffix = '.rst'
 master_doc = 'index'
 
@@ -17,5 +17,6 @@ language = 'ru'
 exclude_patterns = ['build', 'Thumbs.db', '.DS_Store']
 
 pygments_style = 'sphinx'
-html_theme = 'traditional'
-html_static_path = ['@CMAKE_CURRENT_BINARY_DIR@/static']
+html_theme = 'basic'
+html_theme_options = { "nosidebar": "true" }
+html_static_path = ['@SPHINX_BUILD_DIR@/_static']

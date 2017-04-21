@@ -34,6 +34,7 @@ void func(int i, int j, int k)
 
 int main(int argc, char** argv)
 {
-    MultipleForLoop(func, boost::irange(0, 3), std::vector<int>({-2, 0, 1}), std::list<int>({10, 11, 12, 13}));
+    MultipleForLoop(func, boost::irange(0, 3), std::vector<int>({-2, 0, 1}),
+                    std::list<int>({10, 11, 12, 13}));
     return 0;
 }

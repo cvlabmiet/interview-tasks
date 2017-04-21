@@ -1,5 +1,4 @@
-.. toctree::
-    :maxdepth: 2
+.. contents:: Содержание
 
 .. include:: questions.rst
 

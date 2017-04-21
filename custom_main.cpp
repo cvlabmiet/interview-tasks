@@ -12,10 +12,11 @@ using namespace std;
 typedef int libc_start_main_f(...);
 
 extern "C" int __libc_start_main(int (*main)(int, char **, char **), long argc, char** ubp_av,
-                                 void (*init), void (*fini), void (*rtld_fini), void (*stack_end))
+                                 void *init, void *fini, void *rtld_fini, void *stack_end)
 {
     static vector<string> args(ubp_av, ubp_av + argc);
-    auto real_libc_start_main = reinterpret_cast<libc_start_main_f*>(dlsym(RTLD_NEXT, "__libc_start_main"));
+    auto libc_start_main_symbol = dlsym(RTLD_NEXT, "__libc_start_main");
+    auto real_libc_start_main = reinterpret_cast<libc_start_main_f*>(libc_start_main_symbol);
     return real_libc_start_main(main, (long)&args, ubp_av, init, fini, rtld_fini, stack_end);
 }
 

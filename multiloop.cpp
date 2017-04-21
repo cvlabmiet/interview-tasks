@@ -18,9 +18,9 @@ std::tuple<Sizes..., Size, Size> make_cum_product(Size product, Size second, Siz
     return std::tuple_cat(std::make_tuple(product), make_cum_product(second * product, tail...));
 }
 
-template<class Functor, class RangesTuple, class TupleSizes, class TupleCumProd, std::size_t... Is>
+template<class Functor, class Ranges, class Sizes, class CumProd, std::size_t... Is>
 void dereference(Functor f, std::size_t index,
-                 const RangesTuple& ranges, const TupleSizes& sizes, const TupleCumProd& cum_prod,
+                 const Ranges& ranges, const Sizes& sizes, const CumProd& cum_prod,
                  std::index_sequence<Is...>)
 {
     f(std::get<Is>(ranges)[(index / std::get<Is>(cum_prod)) % std::get<Is>(sizes)]...);
@@ -45,6 +45,7 @@ void func(int i, int j, int k)
 
 int main(int argc, char** argv)
 {
-    MultipleForLoop(func, boost::irange(0, 3), std::vector<int>({-2, 0, 1}), std::vector<int>({10, 11, 12, 13}));
+    MultipleForLoop(func, boost::irange(0, 3), std::vector<int>({-2, 0, 1}),
+                    std::vector<int>({10, 11, 12, 13}));
     return 0;
 }
