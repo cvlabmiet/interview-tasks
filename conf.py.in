@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+
+extensions = ['sphinx.ext.mathjax']
+templates_path = ['@SPHINX_BUILD_DIR@/_templates']
+source_suffix = '.rst'
+master_doc = 'index'
+
+project = u'@PROJECT_NAME@'
+copyright = u'2017, cvlabmiet'
+author = u'cvlabmiet'
+show_authors = True
+
+version = u'1.0'
+release = version
+language = 'ru'
+
+exclude_patterns = ['build', 'Thumbs.db', '.DS_Store']
+
+pygments_style = 'sphinx'
+html_theme = 'basic'
+html_theme_options = { "nosidebar": "true" }
+html_static_path = ['@SPHINX_BUILD_DIR@/_static']
